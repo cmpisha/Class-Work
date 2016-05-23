@@ -1,0 +1,95 @@
+/*Blog Styling*/
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: Helevetica, Arial, san-serif;
+  color: #FFF;
+  text-align: center;
+}
+
+#wrapper{
+  margin: 0 auto;
+  max-width: 940px;
+}
+header{
+  background-color: #FFD600;
+  height: 125px;
+}
+
+nav a{
+  padding: 35px 20px 0 0;
+  text-decoration: none;
+}
+
+main {
+  background-color: #FF80DE;
+  width: 80%;
+  height: 600px;
+  float: left;
+  padding-top: 35px;
+
+}
+
+aside {
+  background-color: #52CCCC;
+  width: 20%;
+  height: 600px;
+  float: right;
+  padding-top: 35px;
+}
+
+footer{
+  background-color: #B24896;
+  height: 75px;
+  clear: both;
+
+}
+
+/*Marketing Styling*/
+#marketing{
+  width: 100%;
+  height: 200px;
+}
+#products{
+  clear: both;
+}
+.module{
+  width: 33%;
+  height: 200px;
+  display: inline-block;
+  background-color: tomato;
+  padding-top: 35px;
+}
+
+/*Workspace Styling*/
+#profiles{
+  clear: both;
+}
+
+.person{
+  width: 24.57%;
+  height: 200px;
+  float: left;
+  background-color: #52CCCC;
+  margin: 0px;
+  border-left:4px solid white;
+  padding-top: 35px;
+}
+
+#long_description {
+  background-color: tomato;
+  width: 80%;
+  height: 150px;
+  float: left;
+  padding-top: 35px;
+}
+
+#short_description {
+  background-color: #5AB2B2;
+  width: 20%;
+  height: 150px;
+  float: right;
+  padding-top: 35px;
+}
