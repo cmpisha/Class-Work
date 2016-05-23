@@ -2,6 +2,7 @@
 *{
   margin: 0;
   padding: 0;
+  border: 0;
 }
 body{
   font-family: Helevetica, Arial, san-serif;
@@ -56,9 +57,9 @@ footer{
   clear: both;
 }
 .module{
-  width: 33%;
+  width: 33.33333%;
   height: 200px;
-  display: inline-block;
+  float: left;
   background-color: tomato;
   padding-top: 35px;
 }
