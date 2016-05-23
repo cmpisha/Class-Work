@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  	<head>
+    	<meta charset="utf-8">
+
+    	<style>
+
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li{
+                display: inline-block;
+            }
+
+            nav ul li a:not(:last-child){
+              border-right: solid 1px gray;
+              padding-right: 15px;
+            }
+
+            a:link{
+              text-decoration: none;
+              font-weight: bold;
+            }
+
+            .sub-menu {
+              display: block;
+              padding: 4px;
+              background-color: tomato;
+              /*position: absolute;*/
+            }
+
+            .sub-menu a:link{
+              color: #FFF;
+            }
+
+            .sub-menu a:hover{
+              font-style: italic;
+            }
+
+            nav ul ul {
+              visibility: hidden;
+              position: absolute;
+            }
+
+            nav ul li:hover > ul {
+              visibility: visible;
+            }
+
+            div {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+
+                div:hover {
+                    background-color: green;
+                }
+
+    	</style>
+	</head>
+	<body>
+		<nav>
+            <ul>
+                <li><a href="https://www.youtube.com/">Menu Item 1</a>
+                  <ul>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 1</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 2</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="https://www.youtube.com/">Menu Item 2</a>
+                  <ul>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 1</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 2</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="https://www.youtube.com/">Menu Item 3</a>
+                  <ul>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 1</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 2</a></li>
+                    <li class="sub-menu"><a href="https://www.youtube.com/">Sub Menu Item 3</a></li>
+                  </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <div>
+            Don't hover!
+        </div>
+	</body>
+</html>
