@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #41CACF;
+}
+
+#wrapper{
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Georgia, serif;
+}
+
+header{
+  background-color: #269A9E;
+  margin: 0;
+}
+
+h1{
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #334D5C;
+  padding: 25px;
+
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 25px;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav > ul > li:not(:last-child){
+  border-right: solid 4px #334D5C;
+  padding-right: 15px;
+  margin-right: 15px;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+.menu a {
+  color: #F0EB87;
+  font-size: 1.25em;
+}
+
+.menu > a:hover{
+  font-weight: bold;
+}
+
+.sub-menu{
+  display: block;
+  padding: 4px;
+  background-color: tomato;
+}
+
+.sub-menu a:link{
+  color: #FFF;
+}
+
+.sub-menu a:hover{
+  font-style: italic;
+}
+
+nav ul ul{
+  visibility: hidden;
+  position: absolute;
+}
+
+nav ul li:hover > ul{
+  visibility: visible;
+}
+
+div > div{
+    width: 350px;
+    height: 350px;
+    background-color: #DE5B49;
+    border-radius: 100%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+div > div:hover{
+    background-image: url(Images/cat.png),radial-gradient(#E37B40, #F0EB87, #41CACF);
+    background-position: 190px 190px,0;
+    background-repeat: no-repeat;
+    background-size: 150px, auto;
+}
+
+p{
+  padding-top: 45%;
+  margin: 0;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #FFF;
+}
