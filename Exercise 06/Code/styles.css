@@ -15,7 +15,6 @@ body {
 
 header{
   background-color: #269A9E;
-  margin: 0;
 }
 
 h1{
@@ -95,10 +94,16 @@ div > div{
     margin: 50px auto;
 }
 
+/*Another way to make a gradient
+
+div > div:hover{
+  background: radial-gradient(#E37B40, #F0EB87, #41CACF);
+}*/
+
 div > div:hover{
     background-image: url(Images/cat.png),radial-gradient(#E37B40, #F0EB87, #41CACF);
-    background-position: 190px 190px,0;
-    background-repeat: no-repeat;
+    background-position: 190px 190px, 0;
+    background-repeat: repeat;
     background-size: 150px, auto;
 }
 
