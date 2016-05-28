@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  	<head>
+    	<meta charset="utf-8">
+
+    	<script>
+
+      //@TODO: Add your code here! :)
+
+      function compare100(compare){
+        if(compare <100){
+          console.log(compare+ " "+ "is less than 100");
+        }else if (compare = 100){
+          console.log(compare+ " "+ "is 100");
+        }else if (compare > 100) {
+          console.log(compare+ " "+ "is greater than 100");
+        }
+      };
+      compare100(53);
+
+      function validityTester(x){
+        switch(x){
+          case "valid":
+            console.log("This is valid");
+            break;
+          case "invaild":
+            console.log("This is invalid");
+            break;
+          default:
+            console.log("Unknown Value");
+        }
+      };
+      validityTester("banana");
+
+      function orderOfOperations(x, y, z){
+        console.log((x+y)*z);
+      };
+      orderOfOperations(7, 82, 3.9445);
+
+      var favThings =["Coffee","Spending Time with People","Daydreaming","Traveling","Classic Rock Music","Polka Dots"]
+      for(var i=0; i<favThings.length; i++ ){
+        console.logs(favThings[i] + "<br>");
+      };
+    	</script>
+	</head>
+	<body>
+
+	</body>
+</html>
