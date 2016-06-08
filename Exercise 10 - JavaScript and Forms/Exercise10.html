@@ -10,21 +10,28 @@
 
             //var firstname = document.querySelector("#firstname").value;
 
-            localStorage.setItem("test", form.elements.firstname.value);
+            for (var i=0; i<form.elements.length; i++){
+              localStorage.setItem(form.elements[i].name, form.elements[i].value);
+            }
 
-            //event.preventDefault();
-
-
+            //This is important! If you don't have it, it doesn't submit to localStorage
+            event.preventDefault();
 
           });
-localStorage.clear;
+
+          for(var i=0; i<form.elements.length; i++ ){
+            form[i].value = localStorage.getItem(form.elements[i].name);
+          }
 
       });
+
+      //localStorage.clear();
     </script>
   </head>
 
   <body>
     <form method="GET">
+      <legend>Fill in Your Information Below</legend>
       First name:<br>
       <input type="text" name="firstname" id="firstname"><br>
       Last name:<br>
