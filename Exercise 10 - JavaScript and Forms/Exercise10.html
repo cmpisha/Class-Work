@@ -25,75 +25,75 @@
           }
 
           //Validation: In Progress, Visual Validation for the user
-          form.elements.firstname.addEventListener("blur", function(){
-            var x= form.elements.firstname.value;
-            if(x == "" || x== null){
-              alert("Please enter your name");
-              document.getElementById("firstname").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("firstname").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.lastname.addEventListener("blur", function(){
-            var x= form.elements.lastname.value;
-            if(x == "" || x== null){
-              alert("Please enter your name");
-              document.getElementById("lastname").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("lastname").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.email.addEventListener("blur", function(){
-            var x= form.elements.email.value;
-            if(x == "" || x== null){
-              alert("Please enter your email");
-              document.getElementById("email").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("email").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.phone.addEventListener("blur", function(){
-            var x= form.elements.phone.value;
-            if(x == "" || x== null){
-              alert("Please enter your phone number");
-              document.getElementById("phone").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("phone").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.city.addEventListener("blur", function(){
-            var x= form.elements.city.value;
-            if(x == "" || x== null){
-              alert("Please enter your city");
-              document.getElementById("city").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("city").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.select_state.addEventListener("blur", function(){
-            var x= form.elements.select_state.value;
-            if(x == "Choose One..." || x== null){
-              alert("Please select a State from the Drop Down");
-              document.getElementById("select_state").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("select_state").style.backgroundColor = "#79FFD4";
-            }
-          });
-
-          form.elements.url.addEventListener("blur", function(){
-            var x= form.elements.url.value;
-            if(x == "" || x== null){
-              alert("Please enter your website");
-              document.getElementById("url").style.backgroundColor = "#FF976D";
-            }else {
-              document.getElementById("url").style.backgroundColor = "#79FFD4";
-            }
-          });
+          // form.elements.firstname.addEventListener("blur", function(){
+          //   var x= form.elements.firstname.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your name");
+          //     document.getElementById("firstname").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("firstname").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.lastname.addEventListener("blur", function(){
+          //   var x= form.elements.lastname.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your name");
+          //     document.getElementById("lastname").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("lastname").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.email.addEventListener("blur", function(){
+          //   var x= form.elements.email.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your email");
+          //     document.getElementById("email").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("email").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.phone.addEventListener("blur", function(){
+          //   var x= form.elements.phone.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your phone number");
+          //     document.getElementById("phone").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("phone").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.city.addEventListener("blur", function(){
+          //   var x= form.elements.city.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your city");
+          //     document.getElementById("city").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("city").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.select_state.addEventListener("blur", function(){
+          //   var x= form.elements.select_state.value;
+          //   if(x == "Choose One..." || x== null){
+          //     alert("Please select a State from the Drop Down");
+          //     document.getElementById("select_state").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("select_state").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
+          //
+          // form.elements.url.addEventListener("blur", function(){
+          //   var x= form.elements.url.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your website");
+          //     document.getElementById("url").style.backgroundColor = "#FF976D";
+          //   }else {
+          //     document.getElementById("url").style.backgroundColor = "#79FFD4";
+          //   }
+          // });
 
 
           /////////////////////////////////////////////////////////////////////////////////
@@ -101,19 +101,27 @@
           //        In this section, I tried to make a function to save some typing.
           //        However, I get a syntax error. What am I missing?
           /////////////////////////////////////////////////////////////////////////////////
-          // function validateString(formElementID){
-          //   var x= form.elements.formElementID.value;
-          //   if(x == "" || x== null){
-          //     alert("Please enter your name");
-          //     form.elements.formElementID.style.backgroundColor = "#FF976D";
-          //   }else {
-          //     form.elements.formElementID.style.backgroundColor = "#79FFD4";
-          //   }
-          // };
-          //
-          // form.elements.firstname.addEventListener("blur", validateString(firstname));
+
+          function validateString(){
+            var fieldstring = "firstname";
+            var field = document.getElementsByName(fieldstring)[0];
+            console.log(field);
+            if(field.value == "" || field.value == null){
+              alert("Please enter your name");
+              field.style.backgroundColor = "#FF976D";
+            }else {
+              field.style.backgroundColor = "#79FFD4";
+            }
+          };
+
+          form.elements.firstname.addEventListener("blur", validateString());
+
+
 
       });
+
+
+
 
       //localStorage.clear();
     </script>
