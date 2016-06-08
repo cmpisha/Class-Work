@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css" type="text/css">
     <script>
       document.addEventListener("DOMContentLoaded", function(){
           var form = document.querySelector("form");
@@ -14,7 +15,7 @@
               localStorage.setItem(form.elements[i].name, form.elements[i].value);
             }
 
-            //This is important! If you don't have it, it doesn't submit to localStorage
+            //Note to self: This is important! If you don't have it, it doesn't submit to localStorage
             event.preventDefault();
 
           });
@@ -23,6 +24,95 @@
             form[i].value = localStorage.getItem(form.elements[i].name);
           }
 
+          //Validation: In Progress, Visual Validation for the user
+          form.elements.firstname.addEventListener("blur", function(){
+            var x= form.elements.firstname.value;
+            if(x == "" || x== null){
+              alert("Please enter your name");
+              document.getElementById("firstname").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("firstname").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.lastname.addEventListener("blur", function(){
+            var x= form.elements.lastname.value;
+            if(x == "" || x== null){
+              alert("Please enter your name");
+              document.getElementById("lastname").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("lastname").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.email.addEventListener("blur", function(){
+            var x= form.elements.email.value;
+            if(x == "" || x== null){
+              alert("Please enter your email");
+              document.getElementById("email").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("email").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.phone.addEventListener("blur", function(){
+            var x= form.elements.phone.value;
+            if(x == "" || x== null){
+              alert("Please enter your phone number");
+              document.getElementById("phone").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("phone").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.city.addEventListener("blur", function(){
+            var x= form.elements.city.value;
+            if(x == "" || x== null){
+              alert("Please enter your city");
+              document.getElementById("city").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("city").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.select_state.addEventListener("blur", function(){
+            var x= form.elements.select_state.value;
+            if(x == "Choose One..." || x== null){
+              alert("Please select a State from the Drop Down");
+              document.getElementById("select_state").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("select_state").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+          form.elements.url.addEventListener("blur", function(){
+            var x= form.elements.url.value;
+            if(x == "" || x== null){
+              alert("Please enter your website");
+              document.getElementById("url").style.backgroundColor = "#FF976D";
+            }else {
+              document.getElementById("url").style.backgroundColor = "#79FFD4";
+            }
+          });
+
+
+          /////////////////////////////////////////////////////////////////////////////////
+          //  HELP: If you look above, the validation is a little repetitive.
+          //        In this section, I tried to make a function to save some typing.
+          //        However, I get a syntax error. What am I missing?
+          /////////////////////////////////////////////////////////////////////////////////
+          // function validateString(formElementID){
+          //   var x= form.elements.formElementID.value;
+          //   if(x == "" || x== null){
+          //     alert("Please enter your name");
+          //     form.elements.formElementID.style.backgroundColor = "#FF976D";
+          //   }else {
+          //     form.elements.formElementID.style.backgroundColor = "#79FFD4";
+          //   }
+          // };
+          //
+          // form.elements.firstname.addEventListener("blur", validateString(firstname));
+
       });
 
       //localStorage.clear();
@@ -30,76 +120,84 @@
   </head>
 
   <body>
+    <div id="wrapper">
     <form method="GET">
-      <legend>Fill in Your Information Below</legend>
-      First name:<br>
-      <input type="text" name="firstname" id="firstname"><br>
-      Last name:<br>
-      <input type="text" name="lastname"><br>
-      Email:<br>
-      <input type="email" name="email" placeholder="person@example.com"><br>
-      Phone:<br>
-      <input type="tel" name="phone"><br>
-      City:<br>
-      <input type="text" name="city"><br>
-      State:<br>
-      <select id="select_state" name="state">
-          <option>Choose One...</option>
-          <option value="AL">Alabama</option>
-          <option value="AK">Alaska</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="DE">Delaware</option>
-          <option value="DC">District Of Columbia</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HI">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="IL">Illinois</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentucky</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MA">Massachusetts</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Missouri</option>
-          <option value="MT">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="OH">Ohio</option>
-          <option value="OK">Oklahoma</option>
-          <option value="OR">Oregon</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TN">Tennessee</option>
-          <option value="TX">Texas</option>
-          <option value="UT">Utah</option>
-          <option value="VT">Vermont</option>
-          <option value="VA">Virginia</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Virginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
-        </select><br>
-      Personal Webpage:<br>
-      <input type="text" name="url"><br>
-      <button type="submit">Submit Form</button>
-    </form>
+        <legend>Fill in Your Information Below</legend>
+        <label for="firstname"> First name</label>
+        <input type="text" name="firstname" id="firstname"><br>
+
+        <label for="lastname">Last name:</label>
+        <input type="text" name="lastname" id="lastname"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id= "email" placeholder="person@example.com"><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id ="phone"><br>
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id = "city"><br>
+
+        <label for="state">Select State:</label>
+        <select name="state" id="select_state">
+            <option>Choose One...</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select><br>
+
+        <label for="url">Personal Webpage</label>
+        <input type="text" name="url" id="url"><br>
+        <button type="submit">Submit Form</button>
+      </form>
+    </div>
   </body>
 </html>
