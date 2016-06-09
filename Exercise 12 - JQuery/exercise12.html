@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#wrapper{
+			
+			width:800px;
+			margin:0 auto;
+
+		}
+		#bgColor{
+			background-color: red;
+			width:300px;
+			text-align: center;
+			margin:0 auto;
+		}
+		#navColor{
+			text-align: center;
+		}
+		.target{
+			width:300px;
+			background-color: green;
+			height:100px;
+			margin:20px auto;
+
+		}
+		#bgOption{
+			margin:0 auto;
+			text-align: center;
+		}
+		.boxlink {
+    		display: none;
+		}
+		#boxlink0 {
+    		display: block;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+	<nav id="navColor">
+		<a href="#">HTML</a> |
+		<a href="#">CSS</a> |
+		<a href="#">JavaScript</a> |
+		<a href="#">jQuery</a>
+	</nav>
+
+	<div id="bgColor">
+	Click me and Change my color
+	</div>
+
+
+	<section id="bgOption">
+		<label>Change bg-color of second div</label><br />
+		<button id="changeSecond">bg-color</button><br />
+		<label>Increase</label><br />
+		<button id="positive">+</button><br />
+		<label>Decrease</label><br />
+		<button id="negative">-</button>
+		<div class="target">first</div>
+		<div class="target">second</div>
+		<div class="target">third	</div>
+	</section>
+
+
+</body>
+</html>
