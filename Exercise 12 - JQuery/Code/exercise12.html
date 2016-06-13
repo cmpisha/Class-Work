@@ -4,7 +4,7 @@
 	<title></title>
 	<style>
 		#wrapper{
-			
+
 			width:800px;
 			margin:0 auto;
 
@@ -37,7 +37,48 @@
 		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			//Step 1: Change the Nav when the user interacts with it
+			$("nav").on({
+			    mouseenter: function(){
+			        $(this).css("background-color", "lightgray");
+			    },
+			    mouseleave: function(){
+			        $(this).css("background-color", "lightblue");
+			    },
+			    click: function(){
+			        $(this).css("background-color", "yellow");
+			    }
+			});
+			//Step 2: Change the background of the Div bgColor when you click on it
+			$("#bgColor").click(function(){
+				$(this).css("background-color", "tomato");
+			});
 
+			//Step 3: Change the background color of the second div when the user clicks the changeSecond Button
+			$("#changeSecond").click(function(){
+				$("#bgOption div:nth-of-type(2)").css("background-color", "tomato");
+			});
+
+			//Step 4: Program the Increase and Decrease buttons so that they change the size of the third div
+			$("#positive").click(function(){
+				$("#bgOption div:nth-of-type(3)").animate({
+					height:"+=50",
+					width:"+=50"
+				}, 200);
+			});
+
+			$("#negative").click(function(){
+				$("#bgOption div:nth-of-type(3)").animate({
+					height:"-=50",
+					width: "-=50"
+				}, 200);
+			});
+
+		});
+
+	</script>
 </head>
 <body>
 <div id="wrapper">
