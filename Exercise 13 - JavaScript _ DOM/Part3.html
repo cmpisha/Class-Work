@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+	<head>
+
+		<style>
+
+		</style>
+
+		<script>
+
+		var qAndA = [
+						['Question 1','Answer Q1 1','Answer Q1 2','Answer Q1 3','Answer Q1 4'],
+						['Question 2','Answer Q2 1','Answer Q2 2','Answer Q2 3','Answer Q2 4']
+					];
+
+
+
+		document.addEventListener("DOMContentLoaded", function() {
+
+			/*This generates a random value between 0 and the length of the array
+			* Use this value to access your array. For example, if I wanted to get the second question
+			* I would use this syntax:
+				qAndA[1][0];
+			  And to get the first question:
+			    qAndA[0][0];
+
+			The first value in brackets is the index of the first array, the second value in brackets gets us
+			the value of the second array.  Let's say I wanted to get question 1 answer 2:
+
+			qAndA[0][2]
+
+			or question 2 answer 4: qAndA[1][4]
+			*/
+
+			var randomQuestionIndex = Math.floor((Math.random() * 100)) % qAndA.length;
+
+			//This just logs that value to the console so you can see what the value is
+			console.log("Index is " + randomQuestionIndex);
+
+			//Now update the appropriate span with the question text, use document.getElmenentById or document.querySelector and the innerHTML property of the resulting object.
+
+			//Finally, add List Item elements to the UL to represent question answers.  Put this in a FOR loop
+			// and iterate the length of the array.  Use document.createElement and appendChild to add the new
+			// List Items to the Unordered List (UL)
+
+		});
+		</script>
+
+	</head>
+	<body>
+
+		<h3>Quiz Game!</h3>
+
+		<b>Question:</b> <span id="question_text"></span>
+		<br>
+		<b>Answers:</b>
+		<ul id="question_answers">
+
+		</ul>
+
+	</body>
+</html>

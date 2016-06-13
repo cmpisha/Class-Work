@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+	<head>
+
+		<style>
+			.good {
+				border: solid 1px green;
+			}
+
+			.bad {
+				border: solid 1px red;
+			}
+		</style>
+
+		<script>
+			//Do not worry about these functions
+			function isValidName(full_name) {
+
+				if(full_name.contains(' ') || full_name == "")
+					return false;
+
+				return true;
+			}
+
+			function isValidEmail(email) {
+			    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+			    return re.test(email);
+			}
+
+			function isValidPhone(phone) {
+				var re = /^\d{10}$/g;
+				return re.test(phone);
+			}
+
+			//Wait for DOM to be parsed
+			document.addEventListener("DOMContentLoaded",function() {
+
+				document.querySelector("#full_name").addEventListener("blur", function() {
+
+					if(isValidName(this.value)) {
+						this.classList.add("good");
+						this.classList.remove("bad");
+					}
+					else {
+						this.classList.add("bad");
+						this.classList.remove("good");
+					}
+				});
+
+			});
+		</script>
+
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td>
+					<input type="text" id="full_name" name="full_name">
+				</td>
+			</tr>
+			<tr>
+				<td>Phone:</td>
+				<td>
+					<input type="text" id="phone" name="phone">
+				</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td>
+					<input type="text" id="email" name="email">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<span id="ready_or_not"></span>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

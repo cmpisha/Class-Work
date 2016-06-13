@@ -36,7 +36,22 @@
     		display: block;
 		}
 	</style>
+	<!-- These are the links for the Slider Plugin... currently not working-->
+	<link rel="stylesheet" href="flexslider.css" type="text/css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<script src="js/jquery.flexslider.js"></script>
+
+
+	<!-- For Slider-->
+	<script type="text/javascript" charset="utf-8">
+	  $(window).load(function() {
+	    $('.flexslider').flexslider();
+	  });
+	</script>
+
+	<!-- Exercise Code-->
 	<script>
 		$(document).ready(function() {
 			//Step 1: Change the Nav when the user interacts with it
@@ -78,7 +93,11 @@
 
 		});
 
+
 	</script>
+
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -106,6 +125,20 @@
 		<div class="target">third	</div>
 	</section>
 
+	<!--jQuery Slider Markup -->
+	<div class="flexslider">
+	  <ul class="slides">
+	    <li>
+	      <img src="img/slide1.png" />
+	    </li>
+	    <li>
+	      <img src="img/slide2.png" />
+	    </li>
+	    <li>
+	      <img src="img/slide3.png" />
+	    </li>
+	  </ul>
+	</div>
 
 </body>
 </html>
