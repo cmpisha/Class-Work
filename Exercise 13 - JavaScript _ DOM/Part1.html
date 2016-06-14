@@ -2,15 +2,20 @@
 	<head>
 
 		<style>
-			div div {
+			div{
+				border: 3px solid #000;
+			}
+
+			div>div {
 				width: 50px;
 				height: 50px;
-				background-color: green;
+				background-color: #ff9999;
 				margin: 5px;
+				display: inline-block;
 			}
 
 			button {
-				background-color: green;
+				background-color: #99ffcc;
 			}
 		</style>
 
@@ -25,9 +30,17 @@
 				});*/
 
 				//object.property/method.object.method/property
-				document.querySelector("button").addEventListener("click",function(){
 
-					//@TODO: Add code here!
+				//Adds a new div
+				document.querySelector("button").addEventListener("click",function(){
+					var newDiv = document.createElement("div");
+					document.getElementById("new_content").appendChild(newDiv);
+				});
+
+				document.getElementById('remove_div').addEventListener("click",function(){
+					var newContent = document.querySelector("#new_content");
+					if(newContent.lastChild != null)
+						newContent.removeChild(newContent.lastChild);
 
 				});
 
@@ -40,6 +53,7 @@
 	<body>
 
 		<button>Click to Add Node</button>
+		<button id="remove_div">Click to Remove Node</button>
 
 		<div id="new_content"></div>
 	</body>

@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 	<head>
+		<meta charset="utf-8">
 
 		<style>
 			.good {
@@ -14,7 +15,7 @@
 		<script>
 			//Do not worry about these functions
 			function isValidName(full_name) {
-
+//QUESTION FOR JOSH: The "contains" is giving me a warning
 				if(full_name.contains(' ') || full_name == "")
 					return false;
 
@@ -30,6 +31,18 @@
 				var re = /^\d{10}$/g;
 				return re.test(phone);
 			}
+/* QUESTION FOR JOSH: I tried to make the class switching into a function
+	Is this a solid approach?
+*/
+			function switchToGood(obj) {
+				obj.classList.add("good");
+				obj.classList.remove("bad");
+			}
+
+			function switchToBad(obj)  {
+				obj.classList.add("bad");
+				obj.classList.remove("good");
+			}
 
 			//Wait for DOM to be parsed
 			document.addEventListener("DOMContentLoaded",function() {
@@ -37,14 +50,34 @@
 				document.querySelector("#full_name").addEventListener("blur", function() {
 
 					if(isValidName(this.value)) {
-						this.classList.add("good");
-						this.classList.remove("bad");
+						switchToGood(this);
 					}
 					else {
-						this.classList.add("bad");
-						this.classList.remove("good");
+						switchToBad(this);
 					}
 				});
+
+				document.querySelector("#phone").addEventListener("blur", function() {
+
+					if(isValidPhone(this.value)) {
+						switchToGood(this);
+					}
+					else {
+						switchToBad(this);
+					}
+				});
+
+				document.querySelector("#email").addEventListener("blur", function() {
+
+					if(isValidEmail(this.value)) {
+						switchToGood(this);
+					}
+					else {
+						switchToBad(this);
+					}
+				});
+
+
 
 			});
 		</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  	<head>
+    	<meta charset="utf-8">
+
+    	<style>
+    		div {
+          width: 100%;
+    			border: solid 1px black;
+    		}
+
+    		div div {
+          display: inline-block;
+    			background-color: red;
+    			width: 50px;
+    			height: 50px;
+    		}
+    	</style>
+
+    	<script>
+
+		function removeLastChildElement(parent_obj) {
+
+      //console.log(parent_obj.childNodes);
+
+      if(parent_obj.lastChild != null)
+        parent_obj.removeChild(parent_obj.lastChild);
+		}
+
+    function addElement(parent_dom_node){
+
+      var new_div = document.createElement("h1");
+
+      //console.log(new_div);
+
+      new_div.innerHTML = "Josh";
+
+      parent_dom_node.appendChild(new_div);
+
+    }
+
+		document.addEventListener("DOMContentLoaded", function() {
+
+      //**** Setup Event Handlers  *****
+      document.querySelector("#add_element").addEventListener("click",function() {
+        addElement(document.querySelector("#parent"));
+        //addElement("josh");
+      });
+
+      document.querySelector("#remove_element").addEventListener("click", function() {
+        removeLastChildElement(document.querySelector("#parent"));
+      });
+      //**** End of Event Handlers
+
+		});
+
+    	</script>
+
+	</head>
+	<body>
+    <button id="add_element">Add Element</button>
+    <br>
+    <button id="remove_element">Remove Element</button>
+    <br><br>
+		<div id="parent">
+			<div></div>
+		</div>
+
+	</body>
+</html>
