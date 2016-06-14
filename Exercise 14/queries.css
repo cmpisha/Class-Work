@@ -48,6 +48,21 @@ section{
 	font-size:.9em;
 
 }
+
+#container{
+	margin:0px auto;
+}
+
+#left-col{
+	background-color: gray;
+}
+
+#right-col{
+	background-color: tomato;
+}
+
+
+
 .handle{
 	color:white;
 	width: 100%;
@@ -56,4 +71,25 @@ section{
 	padding: 15px 10px;
 	cursor:pointer;
 	display: none;
+}
+
+/********Media Queries********/
+
+@media (min-width: 700px){
+	#left-col{
+		width: 700px;
+		float: left;
+	}
+	
+	#right-col{
+		width: 260px;
+		float: left;
+	}
+	
+}
+
+@media (min-width: 960px){
+	#container{
+		width:960px;
+	}
 }
