@@ -31,8 +31,9 @@
 				var re = /^\d{10}$/g;
 				return re.test(phone);
 			}
-/* QUESTION FOR JOSH: I tried to make the class switching into a function
-	Is this a solid approach?
+/* Function Takes the Value from isValid
+(which compares the input element with a regular expression)
+and Changes the Class
 */
 			function switchToGood(obj) {
 				obj.classList.add("good");

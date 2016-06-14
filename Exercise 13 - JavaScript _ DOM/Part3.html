@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 	<head>
+		<meta charset="utf-8">
 
 		<style>
 
@@ -30,7 +31,7 @@
 
 			or question 2 answer 4: qAndA[1][4]
 
-			On load, randomly select and display a question
+			@TODO On load, randomly select and display a question
 
 			*/
 
@@ -41,10 +42,14 @@
 
 			//Now update the appropriate span with the question text, use document.getElmenentById or document.querySelector and the innerHTML property of the resulting object.
 
+			document.getElementById("question_text").innerHTML = qAndA[randomQuestionIndex][0];
+
 			//Finally, add List Item elements to the UL to represent question answers.  Put this in a FOR loop
 			// and iterate the length of the array.  Use document.createElement and appendChild to add the new
 			// List Items to the Unordered List (UL)
-
+			for (var i = 1; i < qAndA[randomQuestionIndex].length ; i++ ){
+				document.getElementById("question_answers").innerHTML += "<li>" + qAndA[randomQuestionIndex][i] + "</li>";
+			}
 		});
 		</script>
 
