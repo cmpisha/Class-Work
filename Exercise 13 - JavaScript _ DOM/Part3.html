@@ -47,6 +47,7 @@
 			//Finally, add List Item elements to the UL to represent question answers.  Put this in a FOR loop
 			// and iterate the length of the array.  Use document.createElement and appendChild to add the new
 			// List Items to the Unordered List (UL)
+			//Note: appendChild is another way to apporach this 
 			for (var i = 1; i < qAndA[randomQuestionIndex].length ; i++ ){
 				document.getElementById("question_answers").innerHTML += "<li>" + qAndA[randomQuestionIndex][i] + "</li>";
 			}
